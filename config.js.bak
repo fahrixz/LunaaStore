@@ -1,0 +1,38 @@
+
+const fs = require('fs')
+const chalk = require('chalk')
+
+global.keyai = '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' // https://platform.openai.com/account/api-keys
+
+global.namabot = 'Aditya'
+global.namaowner = 'ADITYA'
+
+global.owner = ['6283839990008']
+global.ownernomer = "6283839990008"
+global.premium = ['6283839990008']
+global.nomorOwner = ['6283839990008']
+
+global.packname = 'HuTod'
+global.author = 'MultiDevice'
+
+global.prefa = ['', '!', '.', '#', '$', ',']
+
+global.mess = {
+    admin: '❗Perintah Ini Hanya Bisa Digunakan Oleh Admin Group !',
+    botAdmin: '❗Perintah Ini Hanya Bisa Digunakan Ketika Bot Menjadi Admin Group !',
+    owner: '❗Perintah Ini Hanya Bisa Digunakan Oleh Owner !',
+    group: '❗Perintah Ini Hanya Bisa Digunakan Di Group Chat !',
+    error: '🚫 Fitur Sedang Error !',
+}
+
+global.thumb = fs.readFileSync('./hutod.jpg')
+global.botname = 'HuTod'
+global.ttname = 'iamunderox_'
+
+let file = require.resolve(__filename)
+fs.watchFile(file, () => {
+    fs.unwatchFile(file)
+    console.log(chalk.redBright(`Update'${__filename}'`))
+    delete require.cache[file]
+    require(file)
+})
